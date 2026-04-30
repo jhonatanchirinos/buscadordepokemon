@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { usePokemonByName } from "../hooks/usePokemonByName";
 import PokemonCard from "./PokemonCard";
-import { Switch } from "@/components/ui/Switch";
+import { Switch } from "@/components/ui/switch";
 
 function SearchByName({ onSelectPokemon }) {
   const [nameInput, setNameInput] = useState("");

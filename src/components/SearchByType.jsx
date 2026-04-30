@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { usePokemonByType } from "../hooks/usePokemonByType";
 import PokemonCard from "./PokemonCard";
-import { Switch } from "@/components/ui/Switch";
+import { Switch } from "@/components/ui/switch";
 
 function SearchByType({ onSelectPokemon }) {
   const [primaryType, setPrimaryType] = useState("");
