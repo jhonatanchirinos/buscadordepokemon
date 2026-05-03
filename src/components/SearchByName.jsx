@@ -31,7 +31,7 @@ function SearchByName({ onSelectPokemon }) {
             value={nameInput}
             onChange={(e) => setNameInput(e.target.value)}
             placeholder="Nombre del Pokémon"
-            className="border-3 border-gray-300 rounded-lg px-4 py-2 text-base focus:outline-none  focus:border-blue-500 shadow-sm w-48"
+            className="border-3 border-gray-300 rounded-lg px-4 py-2 text-base focus:outline-none  focus:border-blue-500 shadow-sm w-52"
           />
           <button
             type="submit"

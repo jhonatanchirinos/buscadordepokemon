@@ -23,14 +23,14 @@ function SearchByType({ onSelectPokemon }) {
             value={primaryType}
             onChange={(e) => setPrimaryType(e.target.value)}
             placeholder="Tipo 1"
-            className="border-3 border-gray-300 rounded-lg px-4 py-2 w-48 focus:outline-none focus:border-blue-500 shadow-sm"
+            className="border-3 border-gray-300 rounded-lg px-4 py-2 w-52 focus:outline-none focus:border-blue-500 shadow-sm"
           />
           <input
             value={secondaryType}
             onChange={(e) => setSecondaryType(e.target.value)}
             placeholder="Tipo 2"
             disabled={!primaryType.trim()}
-            className="border-3 border-gray-300 rounded-lg px-4 py-2 w-48 focus:outline-none focus:border-blue-500 shadow-sm disabled:opacity-60"
+            className="border-3 border-gray-300 rounded-lg px-4 py-2 w-52 focus:outline-none focus:border-blue-500 shadow-sm disabled:opacity-60"
           />
           <button
             type="submit"
