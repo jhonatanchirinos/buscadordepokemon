@@ -20,9 +20,6 @@ function SearchByType({ onSelectPokemon }) {
     setPrimaryType(e.target.value);
   };
 
-  const primaryOptions = POKEMON_TYPES.filter((t) => t.value !== secondaryType);
-  const secondaryOptions = POKEMON_TYPES.filter((t) => t.value !== primaryType);
-
   return (
     <div className="flex flex-col gap-5 items-center w-auto sm:w-full">
       <form onSubmit={handleSubmit}>
@@ -88,16 +85,11 @@ function SearchByType({ onSelectPokemon }) {
       {isLoading && <p>Loading...</p>}
 
       {pokemonList.length > 0 && (
-        <ul
-          className="grid gap-4 p-10 pt-0 w-full"
-          style={{
-            gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
-          }}
-        >
+        <ul className="grid gap-4 p-10 pt-0 w-full grid-cols-[repeat(auto-fill,minmax(100px,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(160px,1fr))]">
           {pokemonList.map((p) => (
             <li
               key={p.name}
-              className="w-52 cursor-pointer"
+              className="sm:w-52 cursor-pointer"
               onClick={() => onSelectPokemon({ ...p, isShiny: isShinyEnabled })}
             >
               <PokemonCard {...p} isShiny={isShinyEnabled} />
