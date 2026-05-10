@@ -9,16 +9,13 @@ export const fetchPokemonByName = async (name, signal) => {
 };
 
 export const fetchPokemonByType = async (primaryType, secondaryType) => {
-  const res = await fetch(
-    `${BASE_URL}/type/${primaryType.trim().toLowerCase()}`,
-  );
+  const res = await fetch(`${BASE_URL}/type/${primaryType}`);
   if (!res.ok) throw Error(`Pokémon de tipo ${primaryType} no encontrado`);
 
   const data = await res.json();
-  const list = data.pokemon;
 
   const detailed = await Promise.all(
-    list.map(async (p) => {
+    data.pokemon.map(async (p) => {
       const res = await fetch(p.pokemon.url);
       const data = await res.json();
 
@@ -33,12 +30,9 @@ export const fetchPokemonByType = async (primaryType, secondaryType) => {
     }),
   );
 
-  const primary = primaryType.trim().toLowerCase();
-  const secondary = secondaryType.trim().toLowerCase();
-
-  return secondary
+  return secondaryType
     ? detailed.filter(
-        (p) => p.types.includes(primary) && p.types.includes(secondary),
+        (p) => p.types.includes(primaryType) && p.types.includes(secondaryType),
       )
-    : detailed.filter((p) => p.types.includes(primary));
+    : detailed.filter((p) => p.types.includes(primaryType));
 };
