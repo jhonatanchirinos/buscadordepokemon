@@ -85,7 +85,7 @@ function SearchByType({ onSelectPokemon }) {
       {isLoading && <p>Loading...</p>}
 
       {pokemonList.length > 0 && (
-        <ul className="grid gap-4 p-10 pt-0 w-full grid-cols-[repeat(auto-fill,minmax(100px,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(160px,1fr))]">
+        <ul className="grid grid-cols-3 gap-4 sm:p-5 pt-0 w-full sm:grid-cols-[repeat(auto-fill,minmax(160px,1fr))]">
           {pokemonList.map((p) => (
             <li
               key={p.name}
