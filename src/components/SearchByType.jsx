@@ -85,11 +85,11 @@ function SearchByType({ onSelectPokemon }) {
       {isLoading && <p>Loading...</p>}
 
       {pokemonList.length > 0 && (
-        <ul className="grid grid-cols-3 gap-4 sm:p-5 pt-0 w-full sm:grid-cols-[repeat(auto-fill,minmax(160px,1fr))]">
+        <ul className="grid grid-cols-[repeat(auto-fill,minmax(140px,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4 sm:gap-6 w-full px-2 sm:px-5 pb-5">
           {pokemonList.map((p) => (
             <li
               key={p.name}
-              className="sm:w-52 cursor-pointer"
+              className="w-full flex"
               onClick={() => onSelectPokemon({ ...p, isShiny: isShinyEnabled })}
             >
               <PokemonCard {...p} isShiny={isShinyEnabled} />

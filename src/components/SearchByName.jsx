@@ -60,7 +60,7 @@ function SearchByName({ onSelectPokemon }) {
       {isLoading && <p>Loading...</p>}
 
       {pokemon && (
-        <div className="w-52 cursor-pointer" onClick={handleSelect}>
+        <div className="w-50 sm:w-60" onClick={handleSelect}>
           <PokemonCard
             name={pokemon.name}
             image={pokemon.sprites.other["home"].front_default}

@@ -3,21 +3,23 @@ const PokemonModal = ({ pokemon, isShiny, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 flex items-center justify-center bg-black/60"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="flex flex-col items-center gap-4 rounded-xl bg-gray-800 p-6 sm:p-10 w-[80vw] sm:w-auto sm:min-w-64 sm:max-w-sm"
+        className="flex flex-col items-center rounded-2xl bg-[#1e1e1e] border border-gray-700/50 shadow-2xl p-6 sm:p-8 w-[85vw] sm:w-auto sm:min-w-80 sm:max-w-md"
         onClick={(e) => e.stopPropagation()}
       >
-        <h2 className="text-2xl font-bold uppercase text-center">
+        <div className="w-full aspect-square flex items-center justify-center bg-[#1E2330] rounded-xl overflow-hidden mb-6 relative">
+          <img
+            src={isShiny ? pokemon.imageShiny : pokemon.image}
+            alt={pokemon.name}
+            className="w-full h-auto object-contain p-4 drop-shadow-lg"
+          />
+        </div>
+        <h2 className="text-2xl sm:text-3xl font-bold uppercase tracking-wider text-gray-200 text-center">
           {pokemon.name}
         </h2>
-        <img
-          src={isShiny ? pokemon.imageShiny : pokemon.image}
-          alt={pokemon.name}
-          className="w-full h-auto"
-        />
       </div>
     </div>
   );
