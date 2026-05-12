@@ -6,8 +6,8 @@
 @custom-variant dark (&:is(.dark *));
 
 body {
-  background-color: #1a1a1a;
-  color: white;
+  background-color: #334155;
+  color: #f8fafc;
 }
 
 @theme inline {

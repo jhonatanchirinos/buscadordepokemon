@@ -31,12 +31,12 @@ function SearchByName({ onSelectPokemon }) {
             value={nameInput}
             onChange={(e) => setNameInput(e.target.value)}
             placeholder="Nombre del Pokémon"
-            className="border-3 border-gray-300 rounded-lg px-4 py-2 text-base focus:outline-none  focus:border-blue-500 shadow-sm w-52"
+            className="border-2 rounded-lg px-4 py-2 text-base bg-[#1e1e1e] border-slate-800 focus:outline-none shadow-sm w-52"
           />
           <button
             type="submit"
             disabled={isLoading}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg disabled:opacity-50 cursor-pointer"
+            className="bg-[#1e1e1e] hover:bg-[#2d2d2d] text-white px-4 py-2 rounded-lg disabled:opacity-50 cursor-pointer"
           >
             Buscar por nombre
           </button>
@@ -47,7 +47,7 @@ function SearchByName({ onSelectPokemon }) {
         <Switch
           checked={isShinyEnabled}
           onCheckedChange={setIsShinyEnabled}
-          className="cursor-pointer data-[state=checked]:bg-blue-500 scale-120"
+          className="cursor-pointer data-[state=checked]:bg-[#1e1e1e] scale-120"
         />
         ✨ Shiny
       </label>

@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="flex flex-col items-center gap-10 p-10 pt-10 ">
-      <h1 className="text-5xl lg:text-7xl text-center">Buscador de Pokémon</h1>
+      <h1 className="text-5xl lg:text-7xl text-center">BUSCADOR DE POKÉMON</h1>
 
       <SearchByName onSelectPokemon={setSelectedPokemon} />
       <SearchByType onSelectPokemon={setSelectedPokemon} />

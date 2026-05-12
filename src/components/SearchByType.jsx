@@ -27,7 +27,7 @@ function SearchByType({ onSelectPokemon }) {
           <select
             value={primaryType}
             onChange={handlePrimaryChange}
-            className="border-3 border-gray-300 rounded-lg px-4 py-2 w-52 focus:outline-none focus:border-blue-500 shadow-sm bg-[#1A1A1A]"
+            className="border-2 rounded-lg px-4 py-2 w-52 shadow-sm bg-[#1A1A1A] border-slate-800 focus:outline-none "
           >
             <option value="">Tipo 1</option>
             {POKEMON_TYPES.map((t) => (
@@ -44,7 +44,7 @@ function SearchByType({ onSelectPokemon }) {
           <select
             value={secondaryType}
             onChange={(e) => setSecondaryType(e.target.value)}
-            className="border-3 border-gray-300 rounded-lg px-4 py-2 w-52 focus:outline-none focus:border-blue-500 shadow-sm disabled:opacity-60 bg-[#1A1A1A]"
+            className="border-2 rounded-lg px-4 py-2 w-52 shadow-sm bg-[#1A1A1A] border-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-slate-400 disabled:opacity-60"
           >
             <option value="">Tipo 2</option>
             {POKEMON_TYPES.map((t) => (
@@ -61,7 +61,7 @@ function SearchByType({ onSelectPokemon }) {
           <button
             type="submit"
             disabled={isLoading}
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg disabled:opacity-50 cursor-pointer"
+            className="bg-[#1e1e1e] hover:bg-[#2d2d2d] text-white px-4 py-2 rounded-lg disabled:opacity-50 cursor-pointer"
           >
             Buscar por tipo
           </button>
@@ -72,7 +72,7 @@ function SearchByType({ onSelectPokemon }) {
         <Switch
           checked={isShinyEnabled}
           onCheckedChange={setIsShinyEnabled}
-          className="cursor-pointer data-[state=checked]:bg-blue-500 scale-120"
+          className="cursor-pointer data-[state=checked]:bg-[#1e1e1e] scale-120"
         />
         ✨ Shiny
       </label>
