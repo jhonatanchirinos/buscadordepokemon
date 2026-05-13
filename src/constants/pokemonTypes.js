@@ -18,3 +18,24 @@ export const POKEMON_TYPES = [
   { label: "Veneno", value: "poison" },
   { label: "Volador", value: "flying" },
 ];
+
+export const TYPE_COLORS = {
+  normal: "#9FA19F",
+  fire: "#E62829",
+  water: "#2980EF",
+  electric: "#FAC000",
+  grass: "#3FA129",
+  ice: "#3FD8FF",
+  fighting: "#FF8000",
+  poison: "#8F41CB",
+  ground: "#915121",
+  flying: "#81B9EF",
+  psychic: "#EF4179",
+  bug: "#91A119",
+  rock: "#AFA981",
+  ghost: "#704170",
+  dragon: "#5061E1",
+  dark: "#50413F",
+  steel: "#60A1B8",
+  fairy: "#EF71EF",
+};

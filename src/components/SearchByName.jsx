@@ -20,6 +20,7 @@ function SearchByName({ onSelectPokemon }) {
       image: pokemon.sprites.other["home"].front_default,
       imageShiny: pokemon.sprites.other["home"].front_shiny,
       isShiny: isShinyEnabled,
+      types: pokemon.types.map((t) => t.type.name),
     });
   };
 
@@ -66,6 +67,7 @@ function SearchByName({ onSelectPokemon }) {
             image={pokemon.sprites.other["home"].front_default}
             imageShiny={pokemon.sprites.other["home"].front_shiny}
             isShiny={isShinyEnabled}
+            types={pokemon.types.map((t) => t.type.name)}
           />
         </div>
       )}
