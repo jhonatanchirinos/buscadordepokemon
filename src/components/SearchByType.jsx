@@ -10,7 +10,7 @@ const TypeDropdown = ({ value, onChange, placeholder, disabledValue }) => {
 
   return (
     <div
-      className="relative w-52 z-50"
+      className={`relative w-52 ${isOpen ? "z-50" : "z-10"}`}
       onBlur={(e) => {
         if (!e.currentTarget.contains(e.relatedTarget)) setIsOpen(false);
       }}
