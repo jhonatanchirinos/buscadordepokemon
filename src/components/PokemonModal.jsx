@@ -16,7 +16,7 @@ const PokemonModal = ({ pokemon, isShiny, onClose }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <div
-          className="w-full aspect-square flex items-center justify-center rounded-xl overflow-hidden mb-6 relative"
+          className="w-full aspect-square flex items-center justify-center rounded-xl overflow-hidden mb-6 relative border-2 border-gray-700/50"
           style={{ backgroundColor: imgBgColor }}
         >
           <img
@@ -26,7 +26,7 @@ const PokemonModal = ({ pokemon, isShiny, onClose }) => {
             style={{ filter: "url(#outline)" }}
           />
         </div>
-        <h2 className="text-2xl sm:text-3xl font-bold uppercase tracking-wider text-gray-200 text-center">
+        <h2 className="text-2xl sm:text-3xl font-bold uppercase tracking-wider text-white text-center [text-shadow:2px_2px_0_#000,-2px_-2px_0_#000,2px_-2px_0_#000,-2px_2px_0_#000,0_4px_8px_#000]">
           {pokemon.name}
         </h2>
       </div>
