@@ -16,15 +16,28 @@ const PokemonModal = ({ pokemon, isShiny, onClose }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <div
-          className="w-full aspect-square flex items-center justify-center rounded-xl overflow-hidden mb-6 relative border-2 border-gray-700/50"
+          className="w-full aspect-square flex flex-row rounded-xl overflow-hidden mb-6 border-2 border-gray-700/50"
           style={{ backgroundColor: imgBgColor }}
         >
-          <img
-            src={isShiny ? pokemon.imageShiny : pokemon.image}
-            alt={pokemon.name}
-            className="w-full h-auto object-contain p-4 drop-shadow-lg"
-            style={{ filter: "url(#outline)" }}
-          />
+          <div className="flex-1 flex items-center justify-center p-0 sm:p-1 ml-10 sm:ml-2">
+            <img
+              src={isShiny ? pokemon.imageShiny : pokemon.image}
+              alt={pokemon.name}
+              className="w-full h-full object-contain drop-shadow-lg"
+              style={{ filter: "url(#outline)" }}
+            />
+          </div>
+          <div className="w-10 sm:w-12 flex flex-col items-center pt-3 gap-1 ">
+            {pokemon.types?.map((type) => (
+              <img
+                key={type}
+                src={`/type-icons/${type}.svg`}
+                alt={type}
+                className="w-6 h-6 sm:w-8 sm:h-8 drop-shadow-md"
+                title={type}
+              />
+            ))}
+          </div>
         </div>
         <h2 className="text-2xl sm:text-3xl font-bold uppercase tracking-wider text-white text-center [text-shadow:2px_2px_0_#000,-2px_-2px_0_#000,2px_-2px_0_#000,-2px_2px_0_#000,0_4px_8px_#000]">
           {pokemon.name}

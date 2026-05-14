@@ -10,7 +10,7 @@ const TypeDropdown = ({ value, onChange, placeholder, disabledValue }) => {
 
   return (
     <div
-      className="relative w-52"
+      className="relative w-52 z-50"
       onBlur={(e) => {
         if (!e.currentTarget.contains(e.relatedTarget)) setIsOpen(false);
       }}
@@ -36,7 +36,7 @@ const TypeDropdown = ({ value, onChange, placeholder, disabledValue }) => {
       </button>
 
       {isOpen && (
-        <ul className="absolute z-10 w-full mt-1 bg-[#1A1A1A] border border-slate-700 rounded-lg shadow-lg max-h-60 overflow-y-auto custom-scrollbar">
+        <ul className="absolute z-50 w-full mt-1 bg-[#1A1A1A] border border-slate-700 rounded-lg shadow-lg max-h-60 overflow-y-auto custom-scrollbar">
           <li
             className="px-4 py-2 hover:bg-slate-800 cursor-pointer text-gray-400"
             onMouseDown={(e) => {
@@ -141,7 +141,7 @@ function SearchByType({ onSelectPokemon }) {
       {isLoading && <p>Loading...</p>}
 
       {pokemonList.length > 0 && (
-        <ul className="grid grid-cols-[repeat(auto-fill,minmax(140px,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4 sm:gap-6 w-full px-2 sm:px-5 pb-5">
+        <ul className="grid grid-cols-[repeat(auto-fill,minmax(140px,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(210px,1fr))] gap-4 sm:gap-6 w-full px-2 sm:px-5 pb-5">
           {pokemonList.map((p) => (
             <li
               key={p.name}
