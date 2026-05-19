@@ -8,7 +8,9 @@ function App() {
 
   return (
     <div className="flex flex-col items-center gap-10 p-10 pt-10 ">
-      <h1 className="text-5xl lg:text-7xl text-center">BUSCADOR DE POKÉMON</h1>
+      <h1 className="text-3xl md:text-5xl lg:text-6xl text-center font-pokemon text-yellow-400 [text-shadow:4px_4px_0_#2b6cb0,-2px_-2px_0_#2b6cb0,2px_-2px_0_#2b6cb0,-2px_2px_0_#2b6cb0,2px_2px_0_#2b6cb0]">
+        Pokébuscador
+      </h1>
 
       <SearchByName onSelectPokemon={setSelectedPokemon} />
       <SearchByType onSelectPokemon={setSelectedPokemon} />
