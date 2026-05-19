@@ -61,13 +61,14 @@ function SearchByName({ onSelectPokemon }) {
       {isLoading && <p>Loading...</p>}
 
       {pokemon && (
-        <div className="w-50 sm:w-60" onClick={handleSelect}>
+        <div className="w-50 sm:w-60">
           <PokemonCard
             name={pokemon.name}
             image={pokemon.sprites.other["home"].front_default}
             imageShiny={pokemon.sprites.other["home"].front_shiny}
             isShiny={isShinyEnabled}
             types={pokemon.types.map((t) => t.type.name)}
+            onClick={handleSelect}
           />
         </div>
       )}

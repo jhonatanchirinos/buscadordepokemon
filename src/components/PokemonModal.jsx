@@ -23,8 +23,9 @@ const PokemonModal = ({ pokemon, isShiny, onClose }) => {
             <img
               src={isShiny ? pokemon.imageShiny : pokemon.image}
               alt={pokemon.name}
-              className="w-full h-full object-contain drop-shadow-lg"
+              className="w-full h-full object-contain drop-shadow-lg select-none"
               style={{ filter: "url(#outline)" }}
+              draggable="false"
             />
           </div>
           <div className="w-10 sm:w-12 flex flex-col items-center pt-3 gap-1 ">
@@ -33,8 +34,9 @@ const PokemonModal = ({ pokemon, isShiny, onClose }) => {
                 key={type}
                 src={`/type-icons/${type}.svg`}
                 alt={type}
-                className="w-6 h-6 sm:w-8 sm:h-8 drop-shadow-md"
+                className="w-6 h-6 sm:w-8 sm:h-8 drop-shadow-md select-none"
                 title={type}
+                draggable="false"
               />
             ))}
           </div>

@@ -61,12 +61,14 @@ const SearchByType = ({ onSelectPokemon }) => {
       {pokemonList.length > 0 && (
         <ul className="grid grid-cols-[repeat(auto-fill,minmax(140px,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(210px,1fr))] gap-4 sm:gap-6 w-full px-2 sm:px-5 pb-5">
           {pokemonList.map((p) => (
-            <li
-              key={p.name}
-              className="w-full flex"
-              onClick={() => onSelectPokemon({ ...p, isShiny: isShinyEnabled })}
-            >
-              <PokemonCard {...p} isShiny={isShinyEnabled} />
+            <li key={p.name} className="w-full flex">
+              <PokemonCard
+                {...p}
+                isShiny={isShinyEnabled}
+                onClick={() =>
+                  onSelectPokemon({ ...p, isShiny: isShinyEnabled })
+                }
+              />
             </li>
           ))}
         </ul>
