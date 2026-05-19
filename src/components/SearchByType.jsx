@@ -24,14 +24,12 @@ const SearchByType = ({ onSelectPokemon }) => {
             value={primaryType}
             onChange={setPrimaryType}
             placeholder="Tipo 1"
-            disabledValue={secondaryType}
           />
 
           <TypeDropdown
             value={secondaryType}
             onChange={setSecondaryType}
             placeholder="Tipo 2"
-            disabledValue={primaryType}
           />
 
           <button

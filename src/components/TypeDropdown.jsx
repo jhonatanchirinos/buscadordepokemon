@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { POKEMON_TYPES } from "@/constants/pokemonTypes";
 
-const TypeDropdown = ({ value, onChange, placeholder, disabledValue }) => {
+const TypeDropdown = ({ value, onChange, placeholder }) => {
   const [isOpen, setIsOpen] = useState(false);
   const selectedType = POKEMON_TYPES.find((t) => t.value === value);
 
@@ -52,26 +52,18 @@ const TypeDropdown = ({ value, onChange, placeholder, disabledValue }) => {
             {placeholder}
           </li>
           {POKEMON_TYPES.map((t) => {
-            const isDisabled = t.value === disabledValue;
             const isSelected = t.value === value;
             return (
               <li
                 key={t.value}
                 role="option"
                 aria-selected={isSelected}
-                aria-disabled={isDisabled}
                 onMouseDown={(e) => {
                   e.preventDefault();
-                  if (!isDisabled) {
-                    onChange(t.value);
-                    setIsOpen(false);
-                  }
+                  onChange(t.value);
+                  setIsOpen(false);
                 }}
-                className={`flex items-center gap-2 px-4 py-2 ${
-                  isDisabled
-                    ? "opacity-30 cursor-not-allowed"
-                    : "hover:bg-slate-800 cursor-pointer"
-                }`}
+                className="flex items-center gap-2 px-4 py-2 hover:bg-slate-800 cursor-pointer"
               >
                 <img
                   src={`/type-icons/${t.value}.svg`}
