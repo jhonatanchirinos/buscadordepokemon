@@ -7,7 +7,7 @@ const TypeDropdown = ({ value, onChange, placeholder }) => {
 
   return (
     <div
-      className={`relative w-52 ${isOpen ? "z-50" : "z-10"}`}
+      className={`relative w-full sm:w-52 ${isOpen ? "z-50" : "z-10"}`}
       onBlur={(e) => {
         if (!e.currentTarget.contains(e.relatedTarget)) setIsOpen(false);
       }}
@@ -17,7 +17,7 @@ const TypeDropdown = ({ value, onChange, placeholder }) => {
         onClick={() => setIsOpen(!isOpen)}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
-        className="flex items-center justify-between w-full border-2 rounded-lg px-4 py-2 shadow-sm bg-[#1A1A1A] border-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-slate-400"
+        className="peer flex items-center justify-between w-full h-11 border-2 rounded-lg px-4 shadow-sm bg-transparent border-slate-700 focus:outline-none relative z-10"
       >
         {selectedType ? (
           <div className="flex items-center gap-2">
@@ -29,10 +29,22 @@ const TypeDropdown = ({ value, onChange, placeholder }) => {
             <span className="text-base">{selectedType.label}</span>
           </div>
         ) : (
-          <span className="text-gray-400">{placeholder}</span>
+          <div className="w-full"></div>
         )}
-        <span className="text-xs text-gray-500">{isOpen ? "▲" : "▼"}</span>
+        <span className="text-base text-gray-500 ml-auto">
+          {isOpen ? "▲" : "▼"}
+        </span>
       </button>
+
+      <label
+        className={`absolute left-3 px-1 transition-all duration-200 pointer-events-none z-20 ${
+          value || isOpen
+            ? "top-0 -translate-y-1/2 text-base text-gray-400 bg-[#1a1a1a]"
+            : "top-1/2 -translate-y-1/2 text-base text-gray-400 bg-transparent"
+        } peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-base peer-focus:bg-[#1a1a1a]`}
+      >
+        {placeholder}
+      </label>
 
       {isOpen && (
         <ul

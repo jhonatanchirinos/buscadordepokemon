@@ -17,39 +17,41 @@ const SearchByType = ({ onSelectPokemon }) => {
   };
 
   return (
-    <div className="flex flex-col gap-5 items-center w-auto sm:w-full">
-      <form onSubmit={handleSubmit}>
-        <div className="flex flex-wrap gap-3 flex-col sm:flex-row justify-center items-center">
-          <TypeDropdown
-            value={primaryType}
-            onChange={setPrimaryType}
-            placeholder="Tipo 1"
+    <div className="flex flex-col gap-10 items-center w-full px-4 sm:px-0">
+      <div className="bg-[#1a1a1a] p-5 sm:p-8 rounded-2xl flex flex-col gap-6 items-center shadow-lg w-full max-w-sm sm:max-w-2xl">
+        <form onSubmit={handleSubmit} className="w-full">
+          <div className="flex gap-4 flex-col sm:flex-row justify-center items-center w-full">
+            <TypeDropdown
+              value={primaryType}
+              onChange={setPrimaryType}
+              placeholder="Tipo 1"
+            />
+
+            <TypeDropdown
+              value={secondaryType}
+              onChange={setSecondaryType}
+              placeholder="Tipo 2"
+            />
+
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="bg-[#2a2a2a] hover:bg-[#3a3a3a] text-white px-5 py-2.5 rounded-lg disabled:opacity-50 cursor-pointer font-medium w-full sm:w-auto transition-colors"
+            >
+              Buscar
+            </button>
+          </div>
+        </form>
+
+        <label className="flex items-center gap-3 font-semibold text-gray-200">
+          <Switch
+            checked={isShinyEnabled}
+            onCheckedChange={setIsShinyEnabled}
+            className="cursor-pointer data-[state=checked]:bg-green-500 scale-120"
           />
-
-          <TypeDropdown
-            value={secondaryType}
-            onChange={setSecondaryType}
-            placeholder="Tipo 2"
-          />
-
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="bg-[#1e1e1e] hover:bg-[#2d2d2d] text-white px-4 py-2 rounded-lg disabled:opacity-50 cursor-pointer"
-          >
-            Buscar por tipo
-          </button>
-        </div>
-      </form>
-
-      <label className="flex items-center gap-3 font-semibold">
-        <Switch
-          checked={isShinyEnabled}
-          onCheckedChange={setIsShinyEnabled}
-          className="cursor-pointer data-[state=checked]:bg-[#1e1e1e] scale-120"
-        />
-        ✨ Shiny
-      </label>
+          ✨ Shiny
+        </label>
+      </div>
 
       {hasError && (
         <p className="text-red-500 italic">
