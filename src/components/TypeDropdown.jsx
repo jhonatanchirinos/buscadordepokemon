@@ -17,7 +17,7 @@ const TypeDropdown = ({ value, onChange, placeholder }) => {
         onClick={() => setIsOpen(!isOpen)}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
-        className="peer flex items-center justify-between w-full h-11 border-2 rounded-lg px-4 shadow-sm bg-transparent border-slate-700 focus:outline-none relative z-10"
+        className="peer flex items-center justify-between w-full py-3 border-2 rounded-lg px-4 shadow-sm bg-transparent border-slate-700 focus:outline-none relative z-10"
       >
         {selectedType ? (
           <div className="flex items-center gap-2">

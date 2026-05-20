@@ -36,7 +36,7 @@ function SearchByName({ onSelectPokemon }) {
                 onChange={(e) => setNameInput(e.target.value)}
                 placeholder=" "
                 autoComplete="off"
-                className="peer border-2 rounded-lg px-4 py-2 text-base bg-transparent border-slate-700 focus:outline-none shadow-sm w-full relative z-10 [&:-webkit-autofill]:[-webkit-box-shadow:0_0_0px_1000px_#1a1a1a_inset] [&:-webkit-autofill]:[-webkit-text-fill-color:white]"
+                className="peer border-2 rounded-lg px-4 py-3 text-base bg-transparent border-slate-700 focus:outline-none shadow-sm w-full relative z-10 [&:-webkit-autofill]:[-webkit-box-shadow:0_0_0px_1000px_#1a1a1a_inset] [&:-webkit-autofill]:[-webkit-text-fill-color:white]"
               />
               <label
                 htmlFor="searchName"
